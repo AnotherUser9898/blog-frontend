@@ -1,0 +1,15 @@
+<header>
+  <a routerLink="/">
+    <h1 class="siteTitle">Blogify Community</h1>
+  </a>
+  <nav>
+    <ul>
+      <li><a routerLink="/register" routerLinkActive="active">Sign Up</a></li>
+      <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+      @if (userService.userLoggedIn()) {
+      <li><a routerLink="author-dashboard">Author Dashboard</a></li>
+      <li><button (click)="onLogout()">Logout</button></li>
+      }
+    </ul>
+  </nav>
+</header>

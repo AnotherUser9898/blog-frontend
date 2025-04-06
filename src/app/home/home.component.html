@@ -1,0 +1,15 @@
+<h2>All Posts</h2>
+
+<ul>
+  @for (post of posts; track post) {
+  <li>
+    <a routerLink="post/{{ post.id }}">
+      <p-panel [header]="post.title" styleClass="panel">
+        <p class="m-0" [innerHTML]="post.content">
+          <!-- {{ post.content.slice(0, min(25, post.content.length)) }}... -->
+        </p>
+      </p-panel>
+    </a>
+  </li>
+  }
+</ul>

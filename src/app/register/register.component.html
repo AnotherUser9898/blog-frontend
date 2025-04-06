@@ -1,0 +1,53 @@
+<div class="register-page-container">
+  <form method="post" class="register-form" (ngSubmit)="onSubmit()">
+    <p-float-label>
+      <input
+        type="text"
+        name="firstname"
+        id="firstname"
+        pInputText
+        required
+        [(ngModel)]="firstname"
+      />
+      <label for="username">Firstname</label>
+    </p-float-label>
+
+    <p-float-label>
+      <input
+        type="text"
+        name="lastname"
+        id="lastname"
+        pInputText
+        required
+        class="input"
+        [(ngModel)]="lastname"
+      />
+      <label for="lastname">Lastname</label>
+    </p-float-label>
+
+    <p-float-label>
+      <input
+        type="email"
+        name="username"
+        id="username"
+        pInputText
+        required
+        [(ngModel)]="username"
+      />
+      <label for="username">Username</label>
+    </p-float-label>
+
+    <p-float-label>
+      <p-password
+        inputId="password"
+        [toggleMask]="true"
+        [feedback]="false"
+        [(ngModel)]="password"
+        name="password"
+      />
+      <label for="password">Password</label>
+    </p-float-label>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>

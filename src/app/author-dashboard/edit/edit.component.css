@@ -1,0 +1,33 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+:host {
+  padding: 2rem;
+}
+input {
+  max-width: 22rem;
+  align-self: start;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  align-self: center;
+  width: clamp(8rem, 40%, 450px);
+}
+
+button:hover {
+  filter: brightness(0.4);
+}

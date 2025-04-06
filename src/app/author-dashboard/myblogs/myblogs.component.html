@@ -1,0 +1,14 @@
+<h2>My Blogs</h2>
+<hr />
+<ul class="blogs">
+  @for (blog of blogs;track blog.id) {
+  <li>
+    <article>
+      <h3>{{ blog.title }}</h3>
+      <a [routerLink]="'../edit/' + blog.id" routerLinkActive="active">Edit</a>
+    </article>
+  </li>
+  } @empty {
+  <p>No posts found for you. Go to write new blog to create</p>
+  }
+</ul>

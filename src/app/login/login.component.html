@@ -1,0 +1,28 @@
+<div class="login-page-container">
+  <form action="" method="post" class="login-form" (ngSubmit)="onSubmit()">
+    <p-float-label>
+      <input
+        type="email"
+        name="username"
+        id="username"
+        pInputText
+        required
+        [(ngModel)]="username"
+      />
+      <label for="username">Username</label>
+    </p-float-label>
+
+    <p-float-label>
+      <p-password
+        inputId="password"
+        [toggleMask]="true"
+        [feedback]="false"
+        [(ngModel)]="password"
+        name="password"
+      />
+      <label for="password">Password</label>
+    </p-float-label>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>

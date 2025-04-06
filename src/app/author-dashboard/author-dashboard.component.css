@@ -1,0 +1,42 @@
+:host {
+  display: grid;
+  grid-template-columns: 0.75fr 3fr;
+  height: 100vh;
+}
+
+aside {
+  /* margin-right: 2rem;
+  background-color: black; */
+
+  margin-right: 2rem;
+  background-color: #1e1e2f; /* Darker background for a modern look */
+  color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  border-radius: 10px; /* Rounded corners */
+}
+
+ul {
+  margin: 2rem 0px 0px 0px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+a {
+  text-decoration: none;
+  padding: 1rem;
+  display: block;
+  color: white;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s;
+}
+
+a:hover {
+  background-color: #ffcc00;
+  color: black;
+}
+
+li {
+  list-style-type: none;
+}
