@@ -8,7 +8,7 @@
       <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
       @if (userService.userLoggedIn()) {
       <li><a routerLink="author-dashboard">Author Dashboard</a></li>
-      <li><button (click)="onLogout()">Logout</button></li>
+      <li><a (click)="onLogout()">Logout</a></li>
       }
     </ul>
   </nav>

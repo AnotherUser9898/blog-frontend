@@ -5,7 +5,7 @@
   <li>
     <a routerLink="post/{{ post.id }}">
       <p-panel [header]="post.title" styleClass="panel">
-        <p class="m-0" [innerHTML]="post.content">
+        <p class="m-0" [innerHTML]="post.content.slice(0, min(25, post.content.length))">
           <!-- {{ post.content.slice(0, min(25, post.content.length)) }}... -->
         </p>
       </p-panel>

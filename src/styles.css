@@ -1,4 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Poppins";
+  src: url("../assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Poppins";
+  margin: 0px;
+  background-color: #f5f5f5;
+}
+
+a {
+  text-decoration: none; /* Removes the underline */
+  color: inherit; /* Inherits color from the parent element */
+  padding: 0; /* Removes any default padding */
+  margin: 0; /* Removes any default margin */
+  outline: none; /* Removes outline on focus */
+}
+
 .p-inputtext {
   width: 100%;
 }

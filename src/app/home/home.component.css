@@ -4,16 +4,20 @@ li {
 
 :host {
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
 }
 
-::ng-deep .p-panel {
+::ng-deep p-panel {
   margin-bottom: 2rem;
-  height: 125px;
   overflow-y: hidden;
+  display: block;
 }
 
 ::ng-deep .p-panel-content p {
-  width: 20%;
+  width: 60%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -22,4 +26,10 @@ li {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+  width: 80%;
 }

@@ -2,6 +2,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 4rem;
 }
 
 ul {
@@ -11,4 +12,38 @@ ul {
 
 li {
   list-style-type: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  background-image: linear-gradient(
+    to right,
+    #ff7e5f,
+    #feb47b
+  ); /* Example gradient */
+  -webkit-background-clip: text; /* Makes the background clip to the text */
+  color: transparent; /* Makes the text color transparent so the gradient shows */
+  text-align: center;
+  margin: 0;
+}
+
+nav ul li a {
+  color: #34495e; /* Dark gray for normal link color */
+  text-decoration: none; /* Remove underline */
+  padding: 10px 15px; /* Add padding around links */
+  border-radius: 4px; /* Slight rounding of corners */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+  font-weight: bolder;
+  font-size: larger;
+}
+
+/* Hover Effect */
+nav ul li a:hover {
+  background-color: #1abc9c; /* Muted teal background on hover */
+  color: #f5f5f5; /* Light gray text color on hover */
 }

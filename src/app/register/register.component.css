@@ -12,6 +12,21 @@
   padding: 2.5rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
+  width: 35%;
+}
+
+::ng-deep .p-password {
+  width: 100%;
+}
+
+h3 {
+  align-self: center;
+  background: linear-gradient(to right, #3498db, #9b59b6); /* Blue to Purple */
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0px;
 }
 
 ::ng-deep .p-button {
