@@ -1,6 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject, signal } from '@angular/core';
-import { type RegisterUser, LoginUser, Post, PostGet } from './user.model';
+import {
+  type RegisterUser,
+  LoginUser,
+  GetAllPosts,
+  GetAllPostsByUserId,
+  GetPostById,
+  EditPost,
+  CreatePost,
+} from './user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -31,20 +39,20 @@ export class UserService {
   }
 
   getAllPosts() {
-    return this.http.get<{ message: string; posts: Post[] }>(
+    return this.http.get<{ message: string; posts: GetAllPosts[] }>(
       this.baseUrl + 'post'
     );
   }
 
   getAllPostsByUserId(headers: { [key: string]: string } = {}) {
-    return this.http.get<{ message: string; posts: Post[] }>(
+    return this.http.get<{ message: string; posts: GetAllPostsByUserId[] }>(
       this.baseUrl + 'post/user',
       { headers }
     );
   }
 
   getPostById(postId: number) {
-    return this.http.get<{ message: string; post: Post }>(
+    return this.http.get<{ message: string; post: GetPostById }>(
       this.baseUrl + `post/${String(postId)}`
     );
   }
@@ -53,7 +61,7 @@ export class UserService {
     headers: { [key: string]: string } = {},
     post: { title: string; content: string }
   ) {
-    return this.http.post<{ message: string; post: Post }>(
+    return this.http.post<{ message: string; post: CreatePost }>(
       this.baseUrl + 'post',
       post,
       { headers }
@@ -65,7 +73,7 @@ export class UserService {
     post: { title: string; content: string },
     postId: number
   ) {
-    return this.http.post<{ message: string; post: Post }>(
+    return this.http.post<{ message: string; post: EditPost }>(
       this.baseUrl + `post/${String(postId)}`,
       post,
       { headers }

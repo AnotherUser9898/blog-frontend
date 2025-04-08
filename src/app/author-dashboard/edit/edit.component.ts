@@ -1,13 +1,14 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
+import { TextareaModule } from 'primeng/textarea';
 import { EditorComponent, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { UserService } from '../../user.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit',
-  imports: [FormsModule, InputTextModule, EditorComponent],
+  imports: [FormsModule, InputTextModule, EditorComponent, TextareaModule],
   templateUrl: './edit.component.html',
   styleUrl: './edit.component.css',
   providers: [
@@ -21,6 +22,7 @@ export class EditComponent implements OnInit {
   @Input({ required: true }) id!: number;
 
   title: string = '';
+  description: string = '';
   content: string = '';
 
   private httpService = inject(UserService);
@@ -38,6 +40,7 @@ export class EditComponent implements OnInit {
       if (res.message == 'success') {
         this.title = res.post.title;
         this.content = res.post.content;
+        this.description = res.post.description;
       }
     });
   }
@@ -55,6 +58,7 @@ export class EditComponent implements OnInit {
     const postData = {
       title: this.title,
       content: this.content,
+      description: this.description,
     };
 
     this.httpService.editPost(headers, postData, this.id).subscribe((res) => {

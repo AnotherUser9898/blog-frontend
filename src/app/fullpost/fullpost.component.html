@@ -1,3 +1,11 @@
 <h1>{{ title }}</h1>
 
+<div class="post-metadata">
+  <span class="author-name">By: {{ authorFullname }}</span>
+  <div class="last-updated">
+    <span class="last-updated-text">Last Updated: </span>
+    <span>{{ updatedAt | date }}</span>
+  </div>
+</div>
+
 <article class="content" [innerHTML]="content"></article>

@@ -8,6 +8,15 @@
     [(ngModel)]="title"
   />
 
+  <textarea
+    rows="5"
+    cols="30"
+    pTextarea
+    [(ngModel)]="description"
+    placeholder="Post Description"
+    name="description"
+  ></textarea>
+
   <editor
     [init]="init"
     [(ngModel)]="content"

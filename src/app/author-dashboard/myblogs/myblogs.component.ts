@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { type Post } from '../../user.model';
+import { type GetAllPostsByUserId } from '../../user.model';
 import { OnInit } from '@angular/core';
 import { UserService } from '../../user.service';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
@@ -11,7 +11,7 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './myblogs.component.css',
 })
 export class MyblogsComponent implements OnInit {
-  blogs?: Post[];
+  blogs?: GetAllPostsByUserId[];
 
   private httpService = inject(UserService);
   private route = inject(Router);

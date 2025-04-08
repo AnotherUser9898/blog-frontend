@@ -1,5 +1,7 @@
 li {
   list-style-type: none;
+  display: flex;
+  justify-content: center;
 }
 
 :host {
@@ -14,13 +16,15 @@ li {
   margin-bottom: 2rem;
   overflow-y: hidden;
   display: block;
+  width: 60%;
 }
 
 ::ng-deep .p-panel-content p {
-  width: 60%;
+  /* width: 60%;
   overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
+  text-align: justify;
 }
 
 a {
@@ -31,5 +35,37 @@ a {
 ul {
   padding: 0px;
   margin: 0px;
-  width: 80%;
+}
+
+.footer-items-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: small;
+}
+
+#author-name {
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666666;
+  letter-spacing: normal;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.last-updated {
+  font-size: 12px;
+  font-weight: 700; /* Regular weight for good legibility */
+  color: #444444; /* Dark gray for higher visibility */
+  letter-spacing: normal;
+  text-transform: lowercase;
+}
+
+span.title {
+  font-weight: bold;
+  font-size: large;
+}
+
+::ng-deep .p-panel-header {
+  padding-bottom: 0px;
 }

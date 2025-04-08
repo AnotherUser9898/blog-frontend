@@ -10,27 +10,53 @@ type LoginUser = {
   password: string;
 };
 
-type PostGet = {
-  title: string;
-  content: string;
-};
-
-type PostDesc = {
-  title: string;
-  id: string;
-};
-
-type Post = {
+type CreatePost = {
   id: number;
   title: string;
   content: string;
+  description: string;
+  createdAt: Date;
+  updatedAt: Date;
   authorId: number;
+};
+
+type EditPost = CreatePost;
+
+type GetAllPosts = {
+  id: number;
+  title: string;
+  description: string;
+  updatedAt: Date;
+  author: {
+    firstname: string;
+    lastname: string;
+  };
+};
+
+type GetPostById = {
+  title: string;
+  content: string;
+  updatedAt: Date;
+  description: string;
+  author: {
+    firstname: string;
+    lastname: string;
+  };
+};
+
+type GetAllPostsByUserId = {
+  id: number;
+  title: string;
+  description: string;
+  updatedAt: Date;
 };
 
 export {
   type RegisterUser,
   type LoginUser,
-  type PostGet,
-  type PostDesc,
-  type Post,
+  type GetAllPostsByUserId,
+  type GetAllPosts,
+  type GetPostById,
+  type EditPost,
+  type CreatePost,
 };

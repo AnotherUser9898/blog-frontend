@@ -1,9 +1,10 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-fullpost',
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './fullpost.component.html',
   styleUrl: './fullpost.component.css',
 })
@@ -14,6 +15,8 @@ export class FullpostComponent implements OnInit {
 
   title: string = '';
   content: string = '';
+  authorFullname: string = '';
+  updatedAt!: Date;
 
   ngOnInit(): void {
     this.httpService.getPostById(this.id).subscribe((res) => {
@@ -21,6 +24,9 @@ export class FullpostComponent implements OnInit {
       if (res.message == 'success') {
         this.title = res.post.title;
         this.content = res.post.content;
+        this.authorFullname =
+          res.post.author.firstname + ' ' + res.post.author.lastname;
+        this.updatedAt = res.post.updatedAt;
       }
     });
   }
