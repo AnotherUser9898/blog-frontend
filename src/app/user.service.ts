@@ -59,7 +59,7 @@ export class UserService {
 
   createPost(
     headers: { [key: string]: string } = {},
-    post: { title: string; content: string }
+    post: { title: string; content: string; description: string }
   ) {
     return this.http.post<{ message: string; post: CreatePost }>(
       this.baseUrl + 'post',
@@ -70,7 +70,7 @@ export class UserService {
 
   editPost(
     headers: { [key: string]: string } = {},
-    post: { title: string; content: string },
+    post: { title: string; content: string; description: string },
     postId: number
   ) {
     return this.http.post<{ message: string; post: EditPost }>(
