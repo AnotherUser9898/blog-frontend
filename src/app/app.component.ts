@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     if (localStorage.getItem('token')) {
       this.userService.userLoggedIn.set(true);
+      console.log('user service');
     }
   }
 }

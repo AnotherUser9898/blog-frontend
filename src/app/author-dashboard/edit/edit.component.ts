@@ -2,16 +2,25 @@ import { Component, Input, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { TextareaModule } from 'primeng/textarea';
+import { Toast } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 import { EditorComponent, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { UserService } from '../../user.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit',
-  imports: [FormsModule, InputTextModule, EditorComponent, TextareaModule],
+  imports: [
+    FormsModule,
+    InputTextModule,
+    EditorComponent,
+    TextareaModule,
+    Toast,
+  ],
   templateUrl: './edit.component.html',
   styleUrl: './edit.component.css',
   providers: [
+    MessageService,
     {
       provide: TINYMCE_SCRIPT_SRC,
       useValue: 'tinymce/tinymce.min.js',
@@ -27,6 +36,7 @@ export class EditComponent implements OnInit {
 
   private httpService = inject(UserService);
   private route = inject(Router);
+  private messageService = inject(MessageService);
 
   init: EditorComponent['init'] = {
     plugins: 'lists link table code help wordcount',
@@ -63,9 +73,11 @@ export class EditComponent implements OnInit {
 
     this.httpService.editPost(headers, postData, this.id).subscribe((res) => {
       console.log(res.message);
-      if (res.message == 'success') {
-        console.log('post updated');
-      }
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Success',
+        detail: 'Post Created',
+      });
     });
   }
 }

@@ -57,6 +57,13 @@ export class UserService {
     );
   }
 
+  deletePostById(headers: { [key: string]: string } = {}, postId: number) {
+    return this.http.delete<{ message: string; posts: GetAllPostsByUserId[] }>(
+      this.baseUrl + `post/${String(postId)}`,
+      { headers }
+    );
+  }
+
   createPost(
     headers: { [key: string]: string } = {},
     post: { title: string; content: string; description: string }

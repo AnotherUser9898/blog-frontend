@@ -5,7 +5,12 @@
   <li>
     <article>
       <h3>{{ blog.title }}</h3>
-      <a [routerLink]="'../edit/' + blog.id" routerLinkActive="active">Edit</a>
+      <div class="action-container">
+        <a [routerLink]="'../edit/' + blog.id" routerLinkActive="active"
+          >Edit</a
+        >
+        <p-button label="Delete" (onClick)="onDelete(blog.id)" />
+      </div>
     </article>
   </li>
   } @empty {
