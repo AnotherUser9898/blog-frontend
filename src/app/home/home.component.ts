@@ -16,8 +16,6 @@ export class HomeComponent implements OnInit {
 
   public userService = inject(UserService);
 
-  collapsed = true;
-
   min(a: number, b: number): number {
     return Math.min(a, b);
   }
@@ -30,7 +28,4 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  onCollapseChange() {
-    this.collapsed = !this.collapsed;
-  }
 }

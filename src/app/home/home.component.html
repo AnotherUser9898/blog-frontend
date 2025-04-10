@@ -3,12 +3,7 @@
 <ul>
   @for (post of posts; track post.id) {
   <li>
-    <p-panel
-      styleClass="panel"
-      [toggleable]="true"
-      [collapsed]="true"
-      (collapsedChange)="onCollapseChange()"
-    >
+    <p-panel styleClass="panel" [toggleable]="true" collapsed="true">
       <ng-template #header>
         <div class="header-items-container">
           <a routerLink="post/{{ post.id }}"

@@ -4,9 +4,10 @@
   </a>
   <nav>
     <ul>
+      @if (!userService.userLoggedIn()) {
       <li><a routerLink="/register" routerLinkActive="active">Sign Up</a></li>
       <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
-      @if (userService.userLoggedIn()) {
+      } @else {
       <li><a routerLink="author-dashboard">Author Dashboard</a></li>
       <li><a (click)="onLogout()">Logout</a></li>
       }
